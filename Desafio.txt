@@ -1,0 +1,118 @@
+package view;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
+
+public class ViewCadastro extends JFrame {
+
+	private JPanel contentPane;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private final ButtonGroup buttonGroup_1 = new ButtonGroup();
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ViewCadastro frame = new ViewCadastro();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ViewCadastro() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btnCadastro = new JButton("Cadastrar");
+		btnCadastro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}	
+			{
+				if (rdbtnDes.isSelected()) {
+					JOptionPane.showMessageDialog(null, "Atividade com prioridade apenas normal ");
+						}
+				else
+					
+					JOptionPane.showMessageDialog(null, "Demais atividades podem ser de prioridade Urgente ou normal ");
+			
+			}});
+		
+		btnCadastro.setBounds(10, 117, 102, 23);
+		contentPane.add(btnCadastro);
+		
+		JLabel Cadastro = new JLabel("Cadastro de Atividades");
+		Cadastro.setBounds(10, 11, 161, 14);
+		contentPane.add(Cadastro);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Normal");
+		buttonGroup.add(rdbtnNewRadioButton);
+		rdbtnNewRadioButton.setBounds(10, 217, 89, 14);
+		contentPane.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnNewRadioButton_1 = new JRadioButton("Urgente");
+		buttonGroup.add(rdbtnNewRadioButton_1);
+		rdbtnNewRadioButton_1.setBounds(108, 213, 109, 23);
+		contentPane.add(rdbtnNewRadioButton_1);
+		
+		JLabel lblNewLabel = new JLabel("Cadastro de Prioridade:");
+		lblNewLabel.setBounds(10, 192, 161, 14);
+		contentPane.add(lblNewLabel);
+		
+		JRadioButton rdbtnManut = new JRadioButton("Manuten\u00E7\u00E3o");
+		buttonGroup.add(rdbtnManut);
+		rdbtnManut.setBounds(10, 32, 109, 23);
+		contentPane.add(rdbtnManut);
+		
+		JRadioButton rdbtnDoc = new JRadioButton("Documenta\u00E7\u00E3o");
+		buttonGroup.add(rdbtnDoc);
+		rdbtnDoc.setBounds(10, 58, 124, 23);
+		contentPane.add(rdbtnDoc);
+		
+		JRadioButton rdbtnDes = new JRadioButton("Desenvolvimento");
+		buttonGroup.add(rdbtnDes);
+		rdbtnDes.setBounds(10, 84, 124, 23);
+		contentPane.add(rdbtnDes);
+		
+		JButton btnEditar = new JButton("Editar");
+		btnEditar.setBounds(128, 117, 89, 23);
+		contentPane.add(btnEditar);
+		
+		JButton btnListar = new JButton("Listar");
+		btnListar.setBounds(236, 117, 89, 23);
+		contentPane.add(btnListar);
+		
+		JButton btnExcluir = new JButton("Excluir");
+		btnExcluir.setBounds(335, 117, 89, 23);
+		contentPane.add(btnExcluir);
+	}
+		private void limparCampos(){
+			  btncadastro.setText("");
+			  btncadastro.setText("");
+	}
+}
